@@ -445,7 +445,7 @@ footer{position:relative;z-index:3;border-top:1px solid var(--bFaint);padding:24
       <div class="cico" style="background:rgba(0,136,204,.1);border-color:rgba(0,136,204,.25);color:#0088cc"><i class="fab fa-telegram" style="font-size:1.3rem"></i></div>
       <div><div class="clt">راسلنا عبر</div><div class="clv">تيليغرام</div></div>
     </a>
-    <a href="mailto:Almegdadismail0@gmail.com" class="ci">
+    <a href="/cdn-cgi/l/email-protection#f5b4999890929194919c8698949c99c5b59298949c99db969a98" class="ci">
       <div class="cico" style="background:rgba(234,67,53,.1);border-color:rgba(234,67,53,.25);color:#ea4335"><i class="fab fa-google" style="font-size:1.2rem"></i></div>
       <div><div class="clt">راسلنا عبر</div><div class="clv">البريد الإلكتروني</div></div>
     </a>
@@ -564,7 +564,7 @@ footer{position:relative;z-index:3;border-top:1px solid var(--bFaint);padding:24
 <div id="tst"></div>
 
 <script>
-/* CURSOR */
+/* ── CURSOR ── */
 const CD=document.getElementById('cd'),CR=document.getElementById('cr');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;CD.style.left=mx+'px';CD.style.top=my+'px'});
@@ -574,14 +574,14 @@ document.querySelectorAll('a,button,.pc,.wc,.ci').forEach(el=>{
   el.addEventListener('mouseleave',()=>{CR.classList.remove('cur-big');CD.classList.remove('cur-sm')});
 });
 
-/* CANVAS */
+/* ── CANVAS ── */
 const cv=document.getElementById('cvbg'),cx=cv.getContext('2d');
 const rsz=()=>{cv.width=innerWidth;cv.height=innerHeight};rsz();window.addEventListener('resize',rsz);
 const COLS=['#00e5ff','#c8a84b','#ff6b6b','#00ff88','#a855f7','#ff69b4','#38bdf8'];
 class P{
   constructor(){this.reset(true)}
-  reset(init){this.x=Math.random()*cv.width;this.y=init?Math.random()*cv.height:Math.random()*cv.height;this.vx=(Math.random()-.5)*.32;this.vy=(Math.random()-.5)*.32;this.r=Math.random()*1.6+.4;this.a=Math.random()*.38+.06;this.c=COLS[0|Math.random()*COLS.length];this.life=0;this.ml=Math.random()*280+160}
-  update(){this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.ml||this.x<0||this.x>cv.width||this.y<0||this.y>cv.height)this.reset(true)}
+  reset(){this.x=Math.random()*cv.width;this.y=Math.random()*cv.height;this.vx=(Math.random()-.5)*.32;this.vy=(Math.random()-.5)*.32;this.r=Math.random()*1.6+.4;this.a=Math.random()*.38+.06;this.c=COLS[0|Math.random()*COLS.length];this.life=0;this.ml=Math.random()*280+160}
+  update(){this.x+=this.vx;this.y+=this.vy;this.life++;if(this.life>this.ml||this.x<0||this.x>cv.width||this.y<0||this.y>cv.height)this.reset()}
   draw(){cx.globalAlpha=this.a*(1-this.life/this.ml);cx.fillStyle=this.c;cx.beginPath();cx.arc(this.x,this.y,this.r,0,Math.PI*2);cx.fill()}
 }
 const pts=Array.from({length:120},()=>new P());
@@ -597,7 +597,7 @@ const pts=Array.from({length:120},()=>new P());
   cx.globalAlpha=1;requestAnimationFrame(draw);
 })();
 
-/* DATA */
+/* ── DATA ── */
 const DC=[
   {id:'c1',name:'شهادة إنجاز في التطوير التقني',type:'achievement',file:'ca1',ft:'image',desc:'شهادة تقديرية لتحقيق إنجاز متميز في مجال تطوير البرمجيات والمواقع الإلكترونية.'},
   {id:'c2',name:'شهادة تقدير وعرفان',type:'appreciation',file:'cap1',ft:'pdf',desc:'شهادة تقدير واعتراف بالجهود المبذولة في خدمة المجتمع التقني والتعليمي.'},
@@ -615,247 +615,382 @@ const DD=[
   {id:'d6',name:'دعوة حفل تخرج',type:'other',file:'gr1',ft:'pdf',desc:'تصميم دعوة حفل تخرج بألوان راقية وتصميم فخم.'},
 ];
 const DS=[
-  {id:'s1',name:'مطعم الفارينا',url:'https://tafu0793-coder.github.io/Farina_resturant/',techs:['HTML','CSS','JS','Bootstrap'],desc:'موقع متكامل لمطعم الفارينا يعرض قائمة الأطعمة مع واجهة أنيقة تعكس أجواء المطعم الدافئة، يتضمن قسم حجوزات وعرض صور.'},
-  {id:'s2',name:'الملف الشخصي',url:'https://tafu0793-coder.github.io/My-profile/',techs:['HTML','CSS','JS'],desc:'موقع ملف شخصي احترافي يعرض المهارات والخبرات المنجزة بتصميم عصري مع سيرة ذاتية تفاعلية.'},
-  {id:'s3',name:'موقع إنشون',url:'https://tafu0793-coder.github.io/inchon-/',techs:['HTML','CSS','JS'],desc:'موقع إلكتروني متطور ومتجاوب يتميز بسهولة التصفح وتجربة مستخدم سلسة على مختلف الأجهزة.'},
-  {id:'s4',name:'نظام إدارة المدرسة',url:'https://tafu0793-coder.github.io/schooladmin/',techs:['HTML','CSS','JS','PHP'],desc:'نظام إداري متكامل لإدارة الطلاب والمعلمين والجداول الدراسية. (admin1 / admin111)'},
-  {id:'s5',name:'المتجر الإلكتروني',url:'https://tafu0793-coder.github.io/store/',techs:['HTML','CSS','JS','Bootstrap'],desc:'متجر إلكتروني بواجهة جذابة لتصفح المنتجات وإضافتها لسلة التسوق.'},
-  {id:'s6',name:'نظام التحقق الإلكتروني',url:'https://hashemissd-rgb.github.io/Verification/#/home',techs:['React','JS'],desc:'نظام آمن للتحقق من صحة الوثائق الرقمية بشكل فوري.'},
-  {id:'s7',name:'كافيه أوريكس',url:'https://ravencorp-tech.github.io/Oryx-Cafe/',techs:['HTML','CSS','JS'],desc:'موقع كافيه أنيق يقدم قائمة المشروبات والوجبات بتصميم جذاب مع العروض اليومية.'},
-  {id:'s8',name:'Petals n Poetry',url:'https://ravencorp-tech.github.io/Petals-n-Poetry-CC/',techs:['HTML','CSS','JS','Bootstrap'],desc:'موقع إبداعي لمتجر الزهور يجمع الطبيعة والفن مع معرض للباقات وإمكانية الطلب.'},
+  {id:'s1',name:'مطعم الفارينا',url:'https://tafu0793-coder.github.io/Farina_resturant/',techs:['HTML','CSS','JS','Bootstrap'],desc:'موقع متكامل لمطعم الفارينا.'},
+  {id:'s2',name:'الملف الشخصي',url:'https://tafu0793-coder.github.io/My-profile/',techs:['HTML','CSS','JS'],desc:'موقع ملف شخصي احترافي يعرض المهارات والخبرات.'},
+  {id:'s3',name:'موقع إنشون',url:'https://tafu0793-coder.github.io/inchon-/',techs:['HTML','CSS','JS'],desc:'موقع إلكتروني متطور ومتجاوب.'},
+  {id:'s4',name:'نظام إدارة المدرسة',url:'https://tafu0793-coder.github.io/schooladmin/',techs:['HTML','CSS','JS','PHP'],desc:'نظام إداري متكامل. (admin1 / admin111)'},
+  {id:'s5',name:'المتجر الإلكتروني',url:'https://tafu0793-coder.github.io/store/',techs:['HTML','CSS','JS','Bootstrap'],desc:'متجر إلكتروني بواجهة جذابة.'},
+  {id:'s6',name:'نظام التحقق الإلكتروني',url:'https://hashemissd-rgb.github.io/Verification/#/home',techs:['React','JS'],desc:'نظام آمن للتحقق من صحة الوثائق الرقمية.'},
+  {id:'s7',name:'كافيه أوريكس',url:'https://ravencorp-tech.github.io/Oryx-Cafe/',techs:['HTML','CSS','JS'],desc:'موقع كافيه أنيق يقدم قائمة المشروبات والوجبات.'},
+  {id:'s8',name:'Petals n Poetry',url:'https://ravencorp-tech.github.io/Petals-n-Poetry-CC/',techs:['HTML','CSS','JS','Bootstrap'],desc:'موقع إبداعي لمتجر الزهور.'},
 ];
 
-function loadDB(){const r=localStorage.getItem('iit3');const e=r?JSON.parse(r):{c:[],d:[],s:[]};return{c:[...DC,...(e.c||[])],d:[...DD,...(e.d||[])],s:[...DS,...(e.s||[])]}}
-function saveDB(){const e={c:DB.c.filter(x=>!DC.find(d=>d.id===x.id)),d:DB.d.filter(x=>!DD.find(d=>d.id===x.id)),s:DB.s.filter(x=>!DS.find(d=>d.id===x.id))};localStorage.setItem('iit3',JSON.stringify(e))}
-let DB=loadDB();
+function loadDB(){
+  try{const r=localStorage.getItem('iit3');const e=r?JSON.parse(r):{c:[],d:[],s:[]};return{c:[...DC,...(e.c||[])],d:[...DD,...(e.d||[])],s:[...DS,...(e.s||[])]}}
+  catch(e){return{c:[...DC],d:[...DD],s:[...DS]}}
+}
+function saveDB(){
+  const e={c:DB.c.filter(x=>!DC.find(d=>d.id===x.id)),d:DB.d.filter(x=>!DD.find(d=>d.id===x.id)),s:DB.s.filter(x=>!DS.find(d=>d.id===x.id))};
+  localStorage.setItem('iit3',JSON.stringify(e));
+}
+var DB=loadDB();
 
 const TP={achievement:{cls:'tp-ach',lbl:'إنجاز'},appreciation:{cls:'tp-app',lbl:'تقدير'},completion:{cls:'tp-com',lbl:'إتمام'},wedding:{cls:'tp-wed',lbl:'زفاف'},poster:{cls:'tp-pos',lbl:'بوستر'},other:{cls:'tp-oth',lbl:'أخرى'}};
-function fu(f,ft){return`${f}.${ft==='pdf'?'pdf':'jpg'}`}
+function fu(f,ft){return f+'.'+(ft==='pdf'?'pdf':'jpg')}
 
-const cio=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');cio.unobserve(e.target)}});},{threshold:.05,rootMargin:'0px 0px 60px 0px'});
+/* card observer */
+const cio=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');cio.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px 60px 0px'});
 function obs(g){setTimeout(()=>{g.querySelectorAll('.pc,.wc').forEach(el=>cio.observe(el));setTimeout(()=>{g.querySelectorAll('.pc:not(.vis),.wc:not(.vis)').forEach(el=>el.classList.add('vis'))},600)},30)}
 
 function mkCard(item,i,sec){
   const tp=TP[item.type]||TP.other,url=fu(item.file,item.ft);
-  return`<div class="pc" style="animation-delay:${i*.065}s" data-id="${item.id}" data-sec="${sec}">
-    <div class="cthumb">
-      ${item.ft==='image'?`<img src="${url}" alt="${item.name}" loading="lazy" onerror="this.parentElement.innerHTML='<i class=\\'fas fa-image thi\\'></i>'">`:`<i class="fas fa-file-pdf thi" style="color:#ff6b6b"></i>`}
-      <span class="tpill ${tp.cls}">${tp.lbl}</span>
-      <div class="covr">
-        ${item.ft==='pdf'?`<a href="${url}" target="_blank" class="cobtn" onclick="event.stopPropagation()"><i class="fas fa-eye"></i> عرض</a>`:''}
-        <a href="${url}" download class="cobtn" onclick="event.stopPropagation()"><i class="fas fa-download"></i> تحميل</a>
-      </div>
-    </div>
-    <div class="cbody"><div class="ctitle">${item.name}</div><div class="cdesc">${item.desc}</div></div>
-  </div>`
+  return '<div class="pc" style="animation-delay:'+i*.065+'s" data-id="'+item.id+'" data-sec="'+sec+'">'+
+    '<div class="cthumb">'+
+    (item.ft==='image'?'<img src="'+url+'" alt="'+item.name+'" loading="lazy" onerror="this.parentElement.innerHTML=\'<i class=\\\"fas fa-image thi\\\"></i>\'">'
+      :'<i class="fas fa-file-pdf thi" style="color:#ff6b6b"></i>')+
+    '<span class="tpill '+tp.cls+'">'+tp.lbl+'</span>'+
+    '<div class="covr">'+
+    (item.ft==='pdf'?'<a href="'+url+'" target="_blank" class="cobtn" onclick="event.stopPropagation()"><i class="fas fa-eye"></i> عرض</a>':'')+
+    '<a href="'+url+'" download class="cobtn" onclick="event.stopPropagation()"><i class="fas fa-download"></i> تحميل</a>'+
+    '</div></div>'+
+    '<div class="cbody"><div class="ctitle">'+item.name+'</div><div class="cdesc">'+item.desc+'</div></div>'+
+    '</div>';
 }
 
-function rCerts(f='all'){const g=document.getElementById('cg'),items=f==='all'?DB.c:DB.c.filter(x=>x.type===f);if(!items.length){g.innerHTML=`<div class="empty"><i class="fas fa-certificate"></i>لا توجد شهادات</div>`;return}g.innerHTML=items.map((c,i)=>mkCard(c,i,'cert')).join('');obs(g);updStats()}
-function rDesigns(f='all'){const g=document.getElementById('dg'),items=f==='all'?DB.d:DB.d.filter(x=>x.type===f);if(!items.length){g.innerHTML=`<div class="empty"><i class="fas fa-palette"></i>لا توجد تصاميم</div>`;return}g.innerHTML=items.map((d,i)=>mkCard(d,i,'design')).join('');obs(g);updStats()}
-
-const BWS=[['#ff6b6b','#ffd93d','#6bcb77'],['#00e5ff','#a855f7','#ff9de2'],['#ffd700','#00ff88','#00e5ff'],['#c084fc','#fb923c','#34d399'],['#f472b6','#a3e635','#60a5fa'],['#fb7185','#fbbf24','#4ade80'],['#38bdf8','#e879f9','#fb923c'],['#a78bfa','#f9a8d4','#6ee7b7']];
+function rCerts(f){
+  f=f||'all';
+  var g=document.getElementById('cg');
+  var items=(f==='all')?DB.c:DB.c.filter(function(x){return x.type===f});
+  if(!items.length){g.innerHTML='<div class="empty"><i class="fas fa-certificate"></i>لا توجد شهادات</div>';return}
+  g.innerHTML=items.map(function(c,i){return mkCard(c,i,'cert')}).join('');
+  obs(g);updStats();
+}
+function rDesigns(f){
+  f=f||'all';
+  var g=document.getElementById('dg');
+  var items=(f==='all')?DB.d:DB.d.filter(function(x){return x.type===f});
+  if(!items.length){g.innerHTML='<div class="empty"><i class="fas fa-palette"></i>لا توجد تصاميم</div>';return}
+  g.innerHTML=items.map(function(d,i){return mkCard(d,i,'design')}).join('');
+  obs(g);updStats();
+}
+var BWS=[['#ff6b6b','#ffd93d','#6bcb77'],['#00e5ff','#a855f7','#ff9de2'],['#ffd700','#00ff88','#00e5ff'],['#c084fc','#fb923c','#34d399']];
 function rSites(){
-  const g=document.getElementById('wg');
-  if(!DB.s.length){g.innerHTML=`<div class="empty"><i class="fas fa-globe"></i>لا توجد مواقع</div>`;return}
-  g.innerHTML=DB.s.map((s,i)=>{const c=BWS[i%BWS.length];return`
-  <div class="wc" style="animation-delay:${i*.065}s">
-    <div class="whead"><div class="brwsr">
-      <div class="bbar"><div class="bd" style="background:${c[0]}"></div><div class="bd" style="background:${c[1]}"></div><div class="bd" style="background:${c[2]}"></div></div>
-      <div class="bbd"><div class="bl ac" style="width:65%;background:linear-gradient(90deg,${c[0]}44,transparent)"></div><div class="bl" style="width:90%"></div><div class="bl" style="width:72%"></div><div class="bl" style="width:55%"></div><div class="bl" style="width:82%"></div></div>
-    </div><span class="tpill tp-web" style="position:absolute;top:11px;right:11px">موقع</span></div>
-    <div class="wbody"><div class="wtitle">${s.name}</div><div class="wurl">${s.url}</div><div class="wdesc">${s.desc}</div>
-      <div class="techs">${s.techs.map(t=>`<span class="tt">${t}</span>`).join('')}</div>
-      <a href="${s.url}" target="_blank" class="wlnk">زيارة الموقع <i class="fas fa-arrow-left"></i></a>
-    </div></div>`}).join('');
+  var g=document.getElementById('wg');
+  if(!DB.s.length){g.innerHTML='<div class="empty"><i class="fas fa-globe"></i>لا توجد مواقع</div>';return}
+  g.innerHTML=DB.s.map(function(s,i){
+    var c=BWS[i%BWS.length];
+    return '<div class="wc" style="animation-delay:'+i*.065+'s">'+
+      '<div class="whead"><div class="brwsr">'+
+      '<div class="bbar"><div class="bd" style="background:'+c[0]+'"></div><div class="bd" style="background:'+c[1]+'"></div><div class="bd" style="background:'+c[2]+'"></div></div>'+
+      '<div class="bbd"><div class="bl ac"></div><div class="bl" style="width:90%"></div><div class="bl" style="width:72%"></div></div>'+
+      '</div><span class="tpill tp-web" style="position:absolute;top:11px;right:11px">موقع</span></div>'+
+      '<div class="wbody"><div class="wtitle">'+s.name+'</div><div class="wurl">'+s.url+'</div><div class="wdesc">'+s.desc+'</div>'+
+      '<div class="techs">'+s.techs.map(function(t){return '<span class="tt">'+t+'</span>'}).join('')+'</div>'+
+      '<a href="'+s.url+'" target="_blank" class="wlnk">زيارة الموقع <i class="fas fa-arrow-left"></i></a>'+
+      '</div></div>';
+  }).join('');
   obs(g);updStats();
 }
 
-function cu(id,n){const el=document.getElementById(id);if(!el)return;let c=0;const s=Math.max(1,Math.ceil(n/40));const t=setInterval(()=>{c=Math.min(c+s,n);el.textContent=c+'+';if(c>=n)clearInterval(t)},28)}
-let sDone=false;
+/* stats */
+function cu(id,n){var el=document.getElementById(id);if(!el)return;var c=0,s=Math.max(1,Math.ceil(n/40)),t=setInterval(function(){c=Math.min(c+s,n);el.textContent=c+'+';if(c>=n)clearInterval(t)},28)}
+var sDone=false;
 function updStats(){if(!sDone)return;cu('sc',DB.c.length);cu('sd',DB.d.length);cu('ss',DB.s.length)}
-const sio=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){sDone=true;updStats();sio.disconnect()}})},{threshold:.25});
-const stEl=document.getElementById('stats');if(stEl)sio.observe(stEl);
+var sio=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){sDone=true;updStats();sio.disconnect()}})},{threshold:.25});
+var stEl=document.getElementById('stats');if(stEl)sio.observe(stEl);
 
-const rio=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');rio.unobserve(e.target)}});},{threshold:.05,rootMargin:'0px 0px 80px 0px'});
-setTimeout(()=>{document.querySelectorAll('.rv,.ci').forEach(el=>rio.observe(el));setTimeout(()=>{document.querySelectorAll('.rv:not(.vis),.ci:not(.vis)').forEach(el=>el.classList.add('vis'))},800)},50);
+/* reveal */
+var rio=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');rio.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px 80px 0px'});
+setTimeout(function(){
+  document.querySelectorAll('.rv,.ci').forEach(function(el){rio.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.vis),.ci:not(.vis)').forEach(function(el){el.classList.add('vis')})},800);
+},50);
 
-function filt(sec,f,btn){btn.closest('.frow').querySelectorAll('.fp').forEach(b=>b.classList.remove('on'));btn.classList.add('on');sec==='c'?rCerts(f):rDesigns(f)}
+/* filter */
+function filt(sec,f,btn){
+  btn.closest('.frow').querySelectorAll('.fp').forEach(function(b){b.classList.remove('on')});
+  btn.classList.add('on');
+  if(sec==='c')rCerts(f); else rDesigns(f);
+}
 
+/* modal */
 function showMdl(id,sec){
-  const items=sec==='cert'?DB.c:DB.d;const item=items.find(x=>x.id===id);if(!item)return;
+  var items=(sec==='cert')?DB.c:DB.d;
+  var item=null;for(var i=0;i<items.length;i++){if(items[i].id===id){item=items[i];break}}
+  if(!item)return;
   document.getElementById('mt').textContent=item.name;
-  const url=fu(item.file,item.ft),tp=TP[item.type]||TP.other;
-  document.getElementById('mb').innerHTML=`
-    ${item.ft==='image'?`<img src="${url}" class="mimg" onerror="this.style.display='none'">`:''}
-    <div style="margin-bottom:13px"><span class="tpill ${tp.cls}" style="position:static">${tp.lbl}</span></div>
-    <p style="color:var(--mute);line-height:1.9;font-size:.88rem;margin-bottom:18px">${item.desc}</p>
-    <div style="display:flex;gap:9px;flex-wrap:wrap">
-      ${item.ft==='pdf'?`<a href="${url}" target="_blank" class="bglow" style="font-size:.8rem"><i class="fas fa-eye"></i> فتح PDF</a>`:''}
-      <a href="${url}" download class="boutl" style="font-size:.8rem"><i class="fas fa-download"></i> تحميل</a>
-    </div>`;
+  var url=fu(item.file,item.ft),tp=TP[item.type]||TP.other;
+  document.getElementById('mb').innerHTML=
+    (item.ft==='image'?'<img src="'+url+'" class="mimg" onerror="this.style.display=\'none\'">':'')+
+    '<div style="margin-bottom:13px"><span class="tpill '+tp.cls+'" style="position:static">'+tp.lbl+'</span></div>'+
+    '<p style="color:var(--mute);line-height:1.9;font-size:.88rem;margin-bottom:18px">'+item.desc+'</p>'+
+    '<div style="display:flex;gap:9px;flex-wrap:wrap">'+
+    (item.ft==='pdf'?'<a href="'+url+'" target="_blank" class="bglow" style="font-size:.8rem"><i class="fas fa-eye"></i> فتح PDF</a>':'')+
+    '<a href="'+url+'" download class="boutl" style="font-size:.8rem"><i class="fas fa-download"></i> تحميل</a>'+
+    '</div>';
   document.getElementById('pm').classList.add('open');
 }
 function closeMdl(){document.getElementById('pm').classList.remove('open')}
-document.addEventListener('click',e=>{const c=e.target.closest('.pc[data-sec]');if(c)showMdl(c.dataset.id,c.dataset.sec)});
+document.addEventListener('click',function(e){var c=e.target.closest('.pc[data-sec]');if(c)showMdl(c.dataset.id,c.dataset.sec)});
 
 /* ── ADMIN ── */
+function toast(m,tp){
+  var el=document.getElementById('tst');
+  tp=tp||'ok';
+  el.innerHTML='<i class="fas fa-'+(tp==='err'?'circle-xmark':'circle-check')+'"></i> '+m;
+  el.className='show'+(tp==='err'?' err':'');
+  clearTimeout(window._tt);
+  window._tt=setTimeout(function(){el.className=''},3500);
+}
+
 function openPwd(){
-  const pi=document.getElementById('pi');
-  pi.value='';
+  document.getElementById('pi').value='';
   document.getElementById('pe').textContent='';
   document.getElementById('po').classList.add('open');
-  setTimeout(()=>pi.focus(),150);
+  setTimeout(function(){document.getElementById('pi').focus()},200);
 }
 function closePwd(){document.getElementById('po').classList.remove('open')}
 
-/* Password input — listen on keydown, only act on Enter */
+/* Password: ONLY trigger on Enter key press — never on any other key */
 document.getElementById('pi').addEventListener('keydown',function(e){
   if(e.key==='Enter'){e.preventDefault();chkPwd();}
 });
 
 function chkPwd(){
-  const val=document.getElementById('pi').value;
-  if(val==='IITC'){closePwd();openAdm();}
-  else{document.getElementById('pe').textContent='كلمة المرور غير صحيحة';document.getElementById('pi').value='';document.getElementById('pi').focus();}
+  var val=document.getElementById('pi').value;
+  if(val==='IITC'){
+    closePwd();
+    openAdm();
+  } else {
+    document.getElementById('pe').textContent='كلمة المرور غير صحيحة ✗';
+    document.getElementById('pi').value='';
+    document.getElementById('pi').focus();
+  }
 }
 
 function openAdm(){
-  const el=document.getElementById('adm');
-  el.classList.add('open');
-  requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.add('adm-vis')));
+  var el=document.getElementById('adm');
+  el.style.display='block';
+  setTimeout(function(){el.style.opacity='1'},20);
   rAdmTbls();
 }
 function closeAdm(){
-  const el=document.getElementById('adm');
-  el.classList.remove('adm-vis');
-  setTimeout(()=>el.classList.remove('open'),320);
+  var el=document.getElementById('adm');
+  el.style.opacity='0';
+  setTimeout(function(){el.style.display='none'},320);
 }
+
 function aSwitch(id,btn){
-  document.querySelectorAll('.at').forEach(b=>b.classList.remove('on'));
-  document.querySelectorAll('.apn').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.at').forEach(function(b){b.classList.remove('on')});
+  document.querySelectorAll('.apn').forEach(function(p){p.classList.remove('on')});
   btn.classList.add('on');
   document.getElementById('apn-'+id).classList.add('on');
 }
 
 function rAdmTbls(){
-  document.getElementById('ct2').innerHTML=DB.c.map((c,i)=>`<tr><td>${i+1}</td><td>${c.name}</td><td><span class="tpill ${(TP[c.type]||TP.other).cls}" style="position:static">${(TP[c.type]||TP.other).lbl}</span></td><td dir="ltr">${c.file}.${c.ft==='pdf'?'pdf':'jpg'}</td><td><button class="bedit" onclick="editItem('cert','${c.id}')"><i class="fas fa-pen"></i> تعديل</button> <button class="bdel" onclick="delC('${c.id}')"><i class="fas fa-trash"></i></button></td></tr>`).join('');
-  document.getElementById('dt2').innerHTML=DB.d.map((d,i)=>`<tr><td>${i+1}</td><td>${d.name}</td><td>${(TP[d.type]||TP.other).lbl}</td><td dir="ltr">${d.file}.${d.ft==='pdf'?'pdf':'jpg'}</td><td><button class="bedit" onclick="editItem('design','${d.id}')"><i class="fas fa-pen"></i> تعديل</button> <button class="bdel" onclick="delD('${d.id}')"><i class="fas fa-trash"></i></button></td></tr>`).join('');
-  document.getElementById('st2').innerHTML=DB.s.map((s,i)=>`<tr><td>${i+1}</td><td>${s.name}</td><td dir="ltr" style="max-width:160px;overflow:hidden;text-overflow:ellipsis"><a href="${s.url}" target="_blank" style="color:var(--cyan)">${s.url}</a></td><td><button class="bedit" onclick="editItem('site','${s.id}')"><i class="fas fa-pen"></i> تعديل</button> <button class="bdel" onclick="delS('${s.id}')"><i class="fas fa-trash"></i></button></td></tr>`).join('');
+  var ct2='',dt2='',st2='';
+  for(var i=0;i<DB.c.length;i++){
+    var c=DB.c[i],tp=TP[c.type]||TP.other;
+    ct2+='<tr><td>'+(i+1)+'</td><td>'+c.name+'</td><td><span class="tpill '+tp.cls+'" style="position:static">'+tp.lbl+'</span></td><td dir="ltr">'+c.file+'.'+(c.ft==='pdf'?'pdf':'jpg')+'</td><td>'+
+      '<button class="bedit" onclick="editItem(\'cert\',\''+c.id+'\')"><i class="fas fa-pen"></i> تعديل</button> '+
+      '<button class="bdel" onclick="delC(\''+c.id+'\')"><i class="fas fa-trash"></i></button></td></tr>';
+  }
+  for(var i=0;i<DB.d.length;i++){
+    var d=DB.d[i],tp=TP[d.type]||TP.other;
+    dt2+='<tr><td>'+(i+1)+'</td><td>'+d.name+'</td><td>'+tp.lbl+'</td><td dir="ltr">'+d.file+'.'+(d.ft==='pdf'?'pdf':'jpg')+'</td><td>'+
+      '<button class="bedit" onclick="editItem(\'design\',\''+d.id+'\')"><i class="fas fa-pen"></i> تعديل</button> '+
+      '<button class="bdel" onclick="delD(\''+d.id+'\')"><i class="fas fa-trash"></i></button></td></tr>';
+  }
+  for(var i=0;i<DB.s.length;i++){
+    var s=DB.s[i];
+    st2+='<tr><td>'+(i+1)+'</td><td>'+s.name+'</td><td dir="ltr" style="max-width:160px;overflow:hidden;text-overflow:ellipsis"><a href="'+s.url+'" target="_blank" style="color:var(--cyan)">'+s.url+'</a></td><td>'+
+      '<button class="bedit" onclick="editItem(\'site\',\''+s.id+'\')"><i class="fas fa-pen"></i> تعديل</button> '+
+      '<button class="bdel" onclick="delS(\''+s.id+'\')"><i class="fas fa-trash"></i></button></td></tr>';
+  }
+  document.getElementById('ct2').innerHTML=ct2||'<tr><td colspan="5" style="text-align:center;color:var(--mute)">لا توجد شهادات</td></tr>';
+  document.getElementById('dt2').innerHTML=dt2||'<tr><td colspan="5" style="text-align:center;color:var(--mute)">لا توجد تصاميم</td></tr>';
+  document.getElementById('st2').innerHTML=st2||'<tr><td colspan="4" style="text-align:center;color:var(--mute)">لا توجد مواقع</td></tr>';
 }
 
-const gv=id=>document.getElementById(id).value.trim();
+function gv(id){var el=document.getElementById(id);return el?el.value.trim():''}
+
 function addCert(){
-  const n=gv('cn'),t=document.getElementById('ct').value,f=gv('cf'),ft=document.getElementById('cft').value,d=gv('cd');
-  if(!n||!f)return toast('يرجى تعبئة الاسم واسم الملف','err');
-  DB.c.push({id:'c'+Date.now(),name:n,type:t,file:f,ft,desc:d});
-  saveDB();rCerts();rAdmTbls();
-  ['cn','cf','cd'].forEach(id=>document.getElementById(id).value='');
-  toast('تمت إضافة الشهادة ✓');
+  var n=gv('cn'),f=gv('cf'),d=gv('cd');
+  var t=document.getElementById('ct').value;
+  var ft=document.getElementById('cft').value;
+  if(!n){toast('يرجى إدخال اسم الشهادة','err');return}
+  if(!f){toast('يرجى إدخال اسم الملف','err');return}
+  var newCert={id:'c'+Date.now(),name:n,type:t,file:f,ft:ft,desc:d};
+  DB.c.push(newCert);
+  saveDB();
+  rCerts();
+  rAdmTbls();
+  document.getElementById('cn').value='';
+  document.getElementById('cf').value='';
+  document.getElementById('cd').value='';
+  toast('✓ تمت إضافة الشهادة: '+n);
 }
-function delC(id){if(!confirm('حذف هذه الشهادة؟'))return;DB.c=DB.c.filter(x=>x.id!==id);saveDB();rCerts();rAdmTbls();toast('تم الحذف')}
+
+function delC(id){
+  if(!confirm('حذف هذه الشهادة؟'))return;
+  DB.c=DB.c.filter(function(x){return x.id!==id});
+  saveDB();rCerts();rAdmTbls();toast('تم حذف الشهادة');
+}
+
 function addDesign(){
-  const n=gv('dn'),t=document.getElementById('dt').value,f=gv('df'),ft=document.getElementById('dft').value,d=gv('dd');
-  if(!n||!f)return toast('يرجى تعبئة الاسم واسم الملف','err');
-  DB.d.push({id:'d'+Date.now(),name:n,type:t,file:f,ft,desc:d});
+  var n=gv('dn'),f=gv('df'),d=gv('dd');
+  var t=document.getElementById('dt').value;
+  var ft=document.getElementById('dft').value;
+  if(!n){toast('يرجى إدخال اسم التصميم','err');return}
+  if(!f){toast('يرجى إدخال اسم الملف','err');return}
+  DB.d.push({id:'d'+Date.now(),name:n,type:t,file:f,ft:ft,desc:d});
   saveDB();rDesigns();rAdmTbls();
-  ['dn','df','dd'].forEach(id=>document.getElementById(id).value='');
-  toast('تمت إضافة التصميم ✓');
+  document.getElementById('dn').value='';
+  document.getElementById('df').value='';
+  document.getElementById('dd').value='';
+  toast('✓ تمت إضافة التصميم: '+n);
 }
-function delD(id){if(!confirm('حذف هذا التصميم؟'))return;DB.d=DB.d.filter(x=>x.id!==id);saveDB();rDesigns();rAdmTbls();toast('تم الحذف')}
+
+function delD(id){
+  if(!confirm('حذف هذا التصميم؟'))return;
+  DB.d=DB.d.filter(function(x){return x.id!==id});
+  saveDB();rDesigns();rAdmTbls();toast('تم حذف التصميم');
+}
+
 function addSite(){
-  const n=gv('sn'),u=gv('su'),d=gv('sdesc'),ts=gv('st').split(',').map(x=>x.trim()).filter(Boolean);
-  if(!n||!u)return toast('يرجى تعبئة الاسم والرابط','err');
-  DB.s.push({id:'s'+Date.now(),name:n,url:u,desc:d,techs:ts.length?ts:['HTML']});
+  var n=gv('sn'),u=gv('su'),d=gv('sdesc'),tsRaw=gv('st');
+  if(!n){toast('يرجى إدخال اسم الموقع','err');return}
+  if(!u){toast('يرجى إدخال رابط الموقع','err');return}
+  var ts=tsRaw?tsRaw.split(',').map(function(x){return x.trim()}).filter(Boolean):['HTML'];
+  DB.s.push({id:'s'+Date.now(),name:n,url:u,desc:d,techs:ts});
   saveDB();rSites();rAdmTbls();
-  ['sn','su','sdesc','st'].forEach(id=>document.getElementById(id).value='');
-  toast('تمت إضافة الموقع ✓');
+  document.getElementById('sn').value='';
+  document.getElementById('su').value='';
+  document.getElementById('sdesc').value='';
+  document.getElementById('st').value='';
+  toast('✓ تمت إضافة الموقع: '+n);
 }
-function delS(id){if(!confirm('حذف هذا الموقع؟'))return;DB.s=DB.s.filter(x=>x.id!==id);saveDB();rSites();rAdmTbls();toast('تم الحذف')}
-function resetAll(){if(!confirm('مسح كل البيانات المضافة؟'))return;localStorage.removeItem('iit3');location.reload()}
+
+function delS(id){
+  if(!confirm('حذف هذا الموقع؟'))return;
+  DB.s=DB.s.filter(function(x){return x.id!==id});
+  saveDB();rSites();rAdmTbls();toast('تم حذف الموقع');
+}
+
+function resetAll(){
+  if(!confirm('مسح كل البيانات المضافة؟'))return;
+  localStorage.removeItem('iit3');location.reload();
+}
 
 /* Edit */
-let editSec='',editId='';
+var editSec='',editId='';
 function editItem(sec,id){
   editSec=sec;editId=id;
-  let item,html='';
+  var item=null,html='',i;
   if(sec==='cert'){
-    item=DB.c.find(x=>x.id===id);if(!item)return;
-    html=`<div class="fg2">
-      <div class="fg"><div class="flb">الاسم</div><input class="fi" id="e_cn" value="${item.name}"></div>
-      <div class="fg"><div class="flb">النوع</div><select class="fs" id="e_ct"><option value="achievement"${item.type==='achievement'?' selected':''}>إنجاز</option><option value="appreciation"${item.type==='appreciation'?' selected':''}>تقدير</option><option value="completion"${item.type==='completion'?' selected':''}>إتمام</option></select></div>
-      <div class="fg"><div class="flb">اسم الملف (بدون امتداد)</div><input class="fi" id="e_cf" value="${item.file}"></div>
-      <div class="fg"><div class="flb">نوع الملف</div><select class="fs" id="e_cft"><option value="image"${item.ft==='image'?' selected':''}>صورة JPG</option><option value="pdf"${item.ft==='pdf'?' selected':''}>PDF</option></select></div>
-      <div class="fg full"><div class="flb">الوصف</div><textarea class="fta" id="e_cd">${item.desc}</textarea></div>
-    </div>`;
+    for(i=0;i<DB.c.length;i++){if(DB.c[i].id===id){item=DB.c[i];break}}
+    if(!item)return;
+    html='<div class="fg2">'+
+      '<div class="fg"><div class="flb">الاسم</div><input class="fi" id="e_cn" value="'+item.name+'"></div>'+
+      '<div class="fg"><div class="flb">النوع</div><select class="fs" id="e_ct">'+
+        '<option value="achievement"'+(item.type==='achievement'?' selected':'')+'>إنجاز</option>'+
+        '<option value="appreciation"'+(item.type==='appreciation'?' selected':'')+'>تقدير</option>'+
+        '<option value="completion"'+(item.type==='completion'?' selected':'')+'>إتمام</option>'+
+      '</select></div>'+
+      '<div class="fg"><div class="flb">اسم الملف</div><input class="fi" id="e_cf" value="'+item.file+'"></div>'+
+      '<div class="fg"><div class="flb">نوع الملف</div><select class="fs" id="e_cft">'+
+        '<option value="image"'+(item.ft==='image'?' selected':'')+'>صورة JPG</option>'+
+        '<option value="pdf"'+(item.ft==='pdf'?' selected':'')+'>PDF</option>'+
+      '</select></div>'+
+      '<div class="fg full"><div class="flb">الوصف</div><textarea class="fta" id="e_cd">'+item.desc+'</textarea></div>'+
+      '</div>';
   } else if(sec==='design'){
-    item=DB.d.find(x=>x.id===id);if(!item)return;
-    html=`<div class="fg2">
-      <div class="fg"><div class="flb">الاسم</div><input class="fi" id="e_dn" value="${item.name}"></div>
-      <div class="fg"><div class="flb">الفئة</div><select class="fs" id="e_dt"><option value="wedding"${item.type==='wedding'?' selected':''}>دعوة زفاف</option><option value="poster"${item.type==='poster'?' selected':''}>بوستر</option><option value="other"${item.type==='other'?' selected':''}>أخرى</option></select></div>
-      <div class="fg"><div class="flb">اسم الملف</div><input class="fi" id="e_df" value="${item.file}"></div>
-      <div class="fg"><div class="flb">نوع الملف</div><select class="fs" id="e_dft"><option value="image"${item.ft==='image'?' selected':''}>صورة JPG</option><option value="pdf"${item.ft==='pdf'?' selected':''}>PDF</option></select></div>
-      <div class="fg full"><div class="flb">الوصف</div><textarea class="fta" id="e_dd">${item.desc}</textarea></div>
-    </div>`;
+    for(i=0;i<DB.d.length;i++){if(DB.d[i].id===id){item=DB.d[i];break}}
+    if(!item)return;
+    html='<div class="fg2">'+
+      '<div class="fg"><div class="flb">الاسم</div><input class="fi" id="e_dn" value="'+item.name+'"></div>'+
+      '<div class="fg"><div class="flb">الفئة</div><select class="fs" id="e_dt">'+
+        '<option value="wedding"'+(item.type==='wedding'?' selected':'')+'>دعوة زفاف</option>'+
+        '<option value="poster"'+(item.type==='poster'?' selected':'')+'>بوستر</option>'+
+        '<option value="other"'+(item.type==='other'?' selected':'')+'>أخرى</option>'+
+      '</select></div>'+
+      '<div class="fg"><div class="flb">اسم الملف</div><input class="fi" id="e_df" value="'+item.file+'"></div>'+
+      '<div class="fg"><div class="flb">نوع الملف</div><select class="fs" id="e_dft">'+
+        '<option value="image"'+(item.ft==='image'?' selected':'')+'>صورة JPG</option>'+
+        '<option value="pdf"'+(item.ft==='pdf'?' selected':'')+'>PDF</option>'+
+      '</select></div>'+
+      '<div class="fg full"><div class="flb">الوصف</div><textarea class="fta" id="e_dd">'+item.desc+'</textarea></div>'+
+      '</div>';
   } else {
-    item=DB.s.find(x=>x.id===id);if(!item)return;
-    html=`<div class="fg2">
-      <div class="fg"><div class="flb">الاسم</div><input class="fi" id="e_sn" value="${item.name}"></div>
-      <div class="fg"><div class="flb">الرابط</div><input class="fi" id="e_su" value="${item.url}"></div>
-      <div class="fg full"><div class="flb">الوصف</div><textarea class="fta" id="e_sdesc">${item.desc}</textarea></div>
-      <div class="fg full"><div class="flb">التقنيات (افصل بفاصلة)</div><input class="fi" id="e_st" value="${(item.techs||[]).join(', ')}"></div>
-    </div>`;
+    for(i=0;i<DB.s.length;i++){if(DB.s[i].id===id){item=DB.s[i];break}}
+    if(!item)return;
+    html='<div class="fg2">'+
+      '<div class="fg"><div class="flb">الاسم</div><input class="fi" id="e_sn" value="'+item.name+'"></div>'+
+      '<div class="fg"><div class="flb">الرابط</div><input class="fi" id="e_su" value="'+item.url+'"></div>'+
+      '<div class="fg full"><div class="flb">الوصف</div><textarea class="fta" id="e_sdesc">'+item.desc+'</textarea></div>'+
+      '<div class="fg full"><div class="flb">التقنيات</div><input class="fi" id="e_st" value="'+(item.techs||[]).join(', ')+'"></div>'+
+      '</div>';
   }
-  document.getElementById('editBody').innerHTML=html+`<br><button class="bglow" onclick="saveEdit()" style="width:100%;justify-content:center"><i class="fas fa-save"></i> حفظ التعديلات</button>`;
+  document.getElementById('editBody').innerHTML=html+
+    '<br><button class="bglow" onclick="saveEdit()" style="width:100%;justify-content:center"><i class="fas fa-save"></i> حفظ التعديلات</button>';
   document.getElementById('editModal').classList.add('open');
 }
 function closeEditModal(){document.getElementById('editModal').classList.remove('open')}
-const gev=id=>{const el=document.getElementById(id);return el?el.value.trim():''};
+
 function saveEdit(){
+  var i;
   if(editSec==='cert'){
-    const idx=DB.c.findIndex(x=>x.id===editId);if(idx<0)return;
-    DB.c[idx]={...DB.c[idx],name:gev('e_cn'),type:document.getElementById('e_ct').value,file:gev('e_cf'),ft:document.getElementById('e_cft').value,desc:gev('e_cd')};
+    for(i=0;i<DB.c.length;i++){if(DB.c[i].id===editId){
+      DB.c[i].name=gv('e_cn');DB.c[i].type=document.getElementById('e_ct').value;
+      DB.c[i].file=gv('e_cf');DB.c[i].ft=document.getElementById('e_cft').value;
+      DB.c[i].desc=gv('e_cd');break;
+    }}
     saveDB();rCerts();
   } else if(editSec==='design'){
-    const idx=DB.d.findIndex(x=>x.id===editId);if(idx<0)return;
-    DB.d[idx]={...DB.d[idx],name:gev('e_dn'),type:document.getElementById('e_dt').value,file:gev('e_df'),ft:document.getElementById('e_dft').value,desc:gev('e_dd')};
+    for(i=0;i<DB.d.length;i++){if(DB.d[i].id===editId){
+      DB.d[i].name=gv('e_dn');DB.d[i].type=document.getElementById('e_dt').value;
+      DB.d[i].file=gv('e_df');DB.d[i].ft=document.getElementById('e_dft').value;
+      DB.d[i].desc=gv('e_dd');break;
+    }}
     saveDB();rDesigns();
   } else {
-    const idx=DB.s.findIndex(x=>x.id===editId);if(idx<0)return;
-    const ts=gev('e_st').split(',').map(x=>x.trim()).filter(Boolean);
-    DB.s[idx]={...DB.s[idx],name:gev('e_sn'),url:gev('e_su'),desc:gev('e_sdesc'),techs:ts.length?ts:['HTML']};
+    for(i=0;i<DB.s.length;i++){if(DB.s[i].id===editId){
+      var ts=gv('e_st').split(',').map(function(x){return x.trim()}).filter(Boolean);
+      DB.s[i].name=gv('e_sn');DB.s[i].url=gv('e_su');
+      DB.s[i].desc=gv('e_sdesc');DB.s[i].techs=ts.length?ts:['HTML'];break;
+    }}
     saveDB();rSites();
   }
-  rAdmTbls();closeEditModal();toast('تم حفظ التعديلات ✓');
+  rAdmTbls();closeEditModal();toast('✓ تم حفظ التعديلات');
 }
-
-/* Toast */
-let tt;
-function toast(m,tp='ok'){const el=document.getElementById('tst');el.innerHTML=`<i class="fas fa-${tp==='err'?'circle-xmark':'circle-check'}"></i> ${m}`;el.className='show'+(tp==='err'?' err':'');clearTimeout(tt);tt=setTimeout(()=>el.className='',3000)}
 
 /* Nav */
 function toggleMenu(){document.getElementById('nl').classList.toggle('open')}
-window.addEventListener('scroll',()=>{document.getElementById('nav').style.background=scrollY>40?'rgba(0,2,8,.92)':'transparent'});
+window.addEventListener('scroll',function(){document.getElementById('nav').style.background=window.scrollY>40?'rgba(0,2,8,.92)':'transparent'});
 
-/* #admin hash — read FIRST, then clean up */
-(function(){
-  const hash=location.hash;
-  if(hash==='#admin'){history.replaceState(null,null,location.pathname);setTimeout(openPwd,600);}
-})();
+/* ── #admin hash fix ── */
+/* Read the hash FIRST before anything can clear it */
+var _startHash=location.hash;
+if(_startHash==='#admin'){
+  history.replaceState(null,null,location.pathname+location.search);
+  window.addEventListener('load',function(){setTimeout(openPwd,400)});
+}
 
-/* Secret keyboard shortcut: type IITC anywhere */
-let buf='';
-document.addEventListener('keydown',e=>{
-  if(document.getElementById('pi')===document.activeElement)return;
-  buf+=e.key;if(buf.length>4)buf=buf.slice(-4);
-  if(buf==='IITC'){buf='';openPwd();}
+/* Secret keyboard shortcut: type IITC */
+var _buf='';
+document.addEventListener('keydown',function(e){
+  /* don't capture when typing in password field */
+  if(document.activeElement&&(document.activeElement.tagName==='INPUT'||document.activeElement.tagName==='TEXTAREA'))return;
+  _buf+=e.key;if(_buf.length>4)_buf=_buf.slice(-4);
+  if(_buf==='IITC'){_buf='';openPwd();}
 });
 
-/* Close overlays on backdrop click */
-document.getElementById('pm').addEventListener('click',e=>{if(e.target===document.getElementById('pm'))closeMdl()});
-document.getElementById('po').addEventListener('click',e=>{if(e.target===document.getElementById('po'))closePwd()});
-document.getElementById('editModal').addEventListener('click',e=>{if(e.target===document.getElementById('editModal'))closeEditModal()});
+/* Backdrop clicks */
+document.getElementById('pm').addEventListener('click',function(e){if(e.target===this)closeMdl()});
+document.getElementById('po').addEventListener('click',function(e){if(e.target===this)closePwd()});
+document.getElementById('editModal').addEventListener('click',function(e){if(e.target===this)closeEditModal()});
 
-/* Init */
+/* ── INIT ── */
 rCerts();rDesigns();rSites();
 </script>
 </body>
