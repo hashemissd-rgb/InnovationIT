@@ -322,7 +322,7 @@ footer{position:relative;z-index:3;border-top:1px solid var(--bFaint);padding:24
 </head>
 <body>
 
-<div id="cd"></div>
+<div id="cursor-dot"></div>
 <div id="cr"></div>
 <canvas id="cvbg"></canvas>
 <div id="hxg"></div>
@@ -567,7 +567,7 @@ footer{position:relative;z-index:3;border-top:1px solid var(--bFaint);padding:24
 
 <script>
 /* CURSOR */
-var CD=document.getElementById('cd'),CR=document.getElementById('cr');
+var CD=document.getElementById('cursor-dot'),CR=document.getElementById('cr');
 var mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;CD.style.left=mx+'px';CD.style.top=my+'px'});
 (function ac(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;CR.style.left=rx+'px';CR.style.top=ry+'px';requestAnimationFrame(ac)})();
@@ -885,7 +885,7 @@ function addCert(){
   rAdmTbls();
   document.getElementById('cn').value='';
   document.getElementById('cf').value='';
-  document.getElementById('cd').value='';
+  document.getElementById('cursor-dot').value='';
   toast('✓ تمت إضافة الشهادة: '+name);
 }
 function delC(id){
