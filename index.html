@@ -2,6 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InnovationIT — ابتكار بلا حدود</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +26,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--void);color:var(--white);
 /* CURSOR */
 #cd{position:fixed;width:7px;height:7px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);box-shadow:0 0 10px var(--cyan),0 0 20px var(--cyan);transition:transform .08s}
 #cr{position:fixed;width:34px;height:34px;border:1px solid rgba(0,229,255,0.35);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .14s ease}
+#adm.open~#cr,#adm.open~#cd,body.adm-open #cr,body.adm-open #cd{display:none!important}
 .cur-big{transform:translate(-50%,-50%) scale(1.7)!important;border-color:rgba(0,229,255,0.6)!important}
 .cur-sm{transform:translate(-50%,-50%) scale(0.4)!important}
 
@@ -241,7 +245,7 @@ footer{position:relative;z-index:3;border-top:1px solid var(--bFaint);padding:24
 .pcancel:hover{color:var(--white)}
 
 /* ADMIN */
-#adm{display:none;position:fixed;inset:0;z-index:8000;background:#06101e;overflow-y:auto}
+#adm{display:none;position:fixed;inset:0;z-index:999999;background:#06101e;overflow-y:auto}
 #adm.open{display:block}
 .aw{max-width:1080px;margin:0 auto;padding:22px}
 .atop{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;background:linear-gradient(135deg,#0d2246,#0a4a8a);border:1px solid rgba(0,229,255,.2);border-radius:14px;margin-bottom:24px}
@@ -283,8 +287,8 @@ footer{position:relative;z-index:3;border-top:1px solid var(--bFaint);padding:24
 .editBox .mb{padding:22px}
 
 /* TOAST */
-#tst{position:fixed;bottom:26px;left:26px;padding:13px 22px;border-radius:11px;background:#0d2246;border:1.5px solid rgba(0,229,255,.4);color:#fff;font-size:.88rem;z-index:9999;transform:translateY(80px);opacity:0;transition:all .32s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,100,200,.35);font-weight:700}
-#tst.show{transform:translateY(0);opacity:1}
+#tst{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-120px);padding:13px 22px;border-radius:11px;background:#0d2246;border:1.5px solid rgba(0,229,255,.4);color:#fff;font-size:.88rem;z-index:9999999;transform:translateY(80px);opacity:0;transition:all .32s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,100,200,.35);font-weight:700}
+#tst.show{transform:translateX(-50%) translateY(0);opacity:1}
 #tst.err{background:#3d0a0a;border-color:rgba(255,80,80,.5);color:#ff9090}
 
 
@@ -806,10 +810,12 @@ function chkPwd(){
 /* ====== ADMIN PANEL ====== */
 function openAdm(){
   document.getElementById('adm').classList.add('open');
+  document.body.classList.add('adm-open');
   rAdmTbls();
 }
 function closeAdm(){
   document.getElementById('adm').classList.remove('open');
+  document.body.classList.remove('adm-open');
 }
 function aSwitch(id,btn){
   document.querySelectorAll('.at').forEach(function(b){b.classList.remove('on')});
